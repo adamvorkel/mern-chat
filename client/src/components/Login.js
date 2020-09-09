@@ -9,7 +9,11 @@ const Login = ({ onIdSubmit }) => {
         e.preventDefault();
 
         onIdSubmit(idRef.current.value)
-    }
+    };
+
+    const createNewId = () => {
+        onIdSubmit(uuid());
+    };
 
     return (
         <div>
@@ -20,7 +24,7 @@ const Login = ({ onIdSubmit }) => {
                 </div>
                 <div>
                     <button type="submit">Login</button>
-                    <button type="button">Create New ID</button>
+                    <button onClick={createNewId} type="button">Create New ID</button>
                 </div>
             </form>
         </div>
