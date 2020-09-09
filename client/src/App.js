@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useLocalStorage from './hooks/useLocalStorage';
 import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 import './App.css';
 
 const App = () => {
@@ -8,8 +9,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {id}
-      <Login onIdSubmit={setId} />
+      {id ? <Dashboard id={id} /> : <Login onIdSubmit={setId} />}
     </div>
   );
 }
