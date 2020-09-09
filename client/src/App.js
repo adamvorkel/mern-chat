@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import Login from './components/Login';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [id, setId] = useState();
+
   return (
     <div className="App">
+      {id}
+      <Login onIdSubmit={setId} />
     </div>
   );
 }
